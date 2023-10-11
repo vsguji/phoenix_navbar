@@ -2,19 +2,7 @@
  * @Author: lipeng 1162423147@qq.com
  * @Date: 2023-09-21 16:12:54
  * @LastEditors: lipeng 1162423147@qq.com
-<<<<<<< HEAD
-<<<<<<< HEAD
- * @LastEditTime: 2023-09-29 09:30:00
-=======
-<<<<<<< HEAD
- * @LastEditTime: 2023-10-11 22:39:37
-=======
- * @LastEditTime: 2023-09-29 09:30:00
->>>>>>> 0083105 ([add] example)
->>>>>>> dfc43a8 ([add] example)
-=======
- * @LastEditTime: 2023-10-11 22:43:00
->>>>>>> 72277c0 ([add] example)
+ * @LastEditTime: 2023-10-11 23:08:47
  * @FilePath: /phoenix_navbar/lib/extension/appbar_default_config_utils.dart
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
