@@ -280,8 +280,8 @@ class __SearchInputWidgetState extends State<_SearchInputWidget> {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.only(right: 8.0),
-                child:
-                    PhoenixTools.getAssetSizeImage(NavBar.iconSearch, 16, 16),
+                child: PhoenixTools.getAssetSizeImage(NavBar.iconSearch, 16, 16,
+                    package: 'phoenix_navbar'),
               ),
               Expanded(
                 child: TextField(

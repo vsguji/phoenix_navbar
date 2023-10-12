@@ -1,6 +1,6 @@
 name: phoenix_navbar
 description: phoenix Flutter 企业级基础组件:Navbar 组件
-version: 1.0.3
+version: 1.0.4
 homepage: 'https://github.com/vsguji/phoenix_navbar.git'
 
 environment:

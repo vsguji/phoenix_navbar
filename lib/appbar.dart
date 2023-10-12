@@ -22,9 +22,9 @@ import 'package:phoenix_line/phoenix_line.dart';
 ///
 ///    首先，计算leading的宽度 外部传入则可以leadingWidth 则已外部传入为主
 ///
-///         该组件为[BrnDoubleLeading]和[BrnBackLeading]提供了计算
-///         leading默认的大小是[BrnAppBarConfig.leadingSize],
-///         [BrnDoubleLeading]的大小是 但是Leading的宽度的2倍+间距
+///         该组件为[DoubleLeading]和[BackLeading]提供了计算
+///         leading默认的大小是[AppBarConfig.leadingSize],
+///         [DoubleLeading]的大小是 但是Leading的宽度的2倍+间距
 ///
 ///         leadingWidth默认宽度为BrnAppBarConfig.leadingSize
 ///         如果传入的leading是完全自定义的Widget，可以自行设置leadingWidth
@@ -33,11 +33,11 @@ import 'package:phoenix_line/phoenix_line.dart';
 ///
 ///    最后，对齐title
 ///
-/// 组件支持两种显示模式深色和浅色。 通过[BrnAppBar.brightness]属性设置，
+/// 组件支持两种显示模式深色和浅色。 通过[AppBar.brightness]属性设置，
 /// 深色[Brightness.dark]模式，背景色是黑色，icon和文字颜色是白色。
 /// 浅色[Brightness.light]模式，背景色是白色，icon和文字颜色是黑色。
-/// 如果使用默认的[BrnBackLeading]和[BrnAppBarTitle]
-/// BkAppBar中的文字颜色和backLeading可自动随着[BrnAppBar.brightness]变化。
+/// 如果使用默认的[BackLeading]和[AppBarTitle]
+/// BkAppBar中的文字颜色和backLeading可自动随着[AppBar.brightness]变化。
 ///
 /// 组件提供了默认的返回leading，如果不需要默认的leading可以设置[automaticallyImplyLeading]为false
 /// 默认的leading，提供了默认的返回[Navigator.pop(context)]，
@@ -46,12 +46,12 @@ import 'package:phoenix_line/phoenix_line.dart';
 /// 其他属性同AppBar本身的含义
 ///
 /// 显示：返回按钮、Appbar示例文本
-/// BrnAppBar(
+/// PhoenixAppBar(
 ///   title: 'Appbar示例',
 /// )
 ///
 /// 显示：自定义leading、tab切换、自定义action
-/// BrnAppBar(
+/// PhoenixAppBar(
 ///   leading: BrnBackLeading(),
 ///   title: Row(
 ///   mainAxisSize: MainAxisSize.min,
@@ -85,12 +85,12 @@ import 'package:phoenix_line/phoenix_line.dart';
 ///  actions: BrnIconAction()
 ///
 /// 相关组件如下:
-///  * [BrnBackLeading], 自定义leading，单个文本或按钮
-///  * [BrnDoubleLeading], 自定义leading，两个文本或按钮
-///  * [BrnAppBarTitle], 自定义title，纯文本展示
-///  * [BrnIconAction], 自定义action，显示icon
-///  * [BrnTextAction], 自定义action，纯文本展示
-///  * [BrnBarBottomDivider], appbar与其他元素的分割线，同[BrnLine]
+///  * [BackLeading], 自定义leading，单个文本或按钮
+///  * [DoubleLeading], 自定义leading，两个文本或按钮
+///  * [AppBarTitle], 自定义title，纯文本展示
+///  * [IconAction], 自定义action，显示icon
+///  * [TextAction], 自定义action，纯文本展示
+///  * [BarBottomDivider], appbar与其他元素的分割线，同[BrnLine]
 ///
 ///
 class PhoenixAppBar extends PreferredSize {
@@ -356,12 +356,12 @@ class PhoenixAppBar extends PreferredSize {
   Widget? _wrapLeading(AppBarConfig barConfig) {
     Widget? realLeading = leading;
     if (leading == null && automaticallyImplyLeading) {
-      realLeading = BrnBackLeading(
+      realLeading = BackLeading(
         iconPressed: backLeadCallback,
         themeData: barConfig,
       );
     }
-    if (realLeading is BrnBackLeading) {
+    if (realLeading is BackLeading) {
       return Container(
         padding: EdgeInsets.only(left: barConfig.leftAndRightPadding),
         child: realLeading,
@@ -373,12 +373,12 @@ class PhoenixAppBar extends PreferredSize {
 
 /// [BrnAppBar]中leading的默认实现
 /// 宽度范围是40
-class BrnBackLeading extends StatelessWidget {
+class BackLeading extends StatelessWidget {
   final Widget? child;
   final VoidCallback? iconPressed;
   final AppBarConfig? themeData;
 
-  const BrnBackLeading({
+  const BackLeading({
     Key? key,
     this.iconPressed,
     this.child,
@@ -602,7 +602,7 @@ class _BrnSearchResultAppBar extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
         /// leading
-        BrnBackLeading(
+        BackLeading(
           iconPressed: backLeadCallback,
           themeData: _defaultConfig,
         ),

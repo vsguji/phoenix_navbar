@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:phoenix_navbar/appbar.dart';
 
+import 'appbar_entry_page.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: AppbarEntryPage(),
     );
   }
 }
